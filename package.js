@@ -1,9 +1,9 @@
 Package.describe({
-  name: "yogiben:autoform-file",
+  name: "poetic:autoform-file",
   summary: "File upload for AutoForm",
   description: "File upload for AutoForm",
   version: "0.2.8",
-  git: "http://github.com/yogiben/autoform-file.git"
+  git: "http://github.com/poetic/meteor-autoform-file.git"
 });
 
 Package.onUse(function(api) {
