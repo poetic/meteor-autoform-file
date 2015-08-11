@@ -1,8 +1,8 @@
 Package.describe({
   name: "poetic:autoform-file",
-  summary: "File upload for AutoForm",
-  description: "File upload for AutoForm",
-  version: "0.2.8",
+  summary: "Cross platform file uploads for AutoForm (supports multiple file uploads)",
+  description: "Cross platform file uploads for AutoForm (supports multiple file uploads)",
+  version: "0.2.9",
   git: "http://github.com/poetic/meteor-autoform-file.git"
 });
 
@@ -16,7 +16,6 @@ Package.onUse(function(api) {
     'templating',
     'less',
     'aldeed:autoform@5.3.2',
-    'fortawesome:fontawesome@4.3.0'
   ]);
 
   api.addFiles('lib/client/autoform-file.html', 'client');
