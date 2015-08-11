@@ -43,6 +43,11 @@ Template.afFileUpload.helpers
       'afFileUploadThumbIcon'
   file: ->
     getDocument @
+  attrIfMultiple: ->
+    if @atts.multiple
+      'multiple'
+    else
+      ''
 
 Template.afFileUpload.events
   'click .js-select-file': (e, t) ->
@@ -50,14 +55,15 @@ Template.afFileUpload.events
 
   'change .js-file': (e, t) ->
     collection = getCollection t.data
+    userId = Meteor.userId()
 
-    file = new FS.File e.target.files[0]
-    if Meteor.userId
-      file.owner = Meteor.userId()
+    FS.Utility.eachFile e, (file) ->
+      if userId
+        file.owner = userId
 
-    collection.insert file, (err, fileObj) ->
-      if err then return console.log err
-      t.value.set fileObj._id
+        collection.insert file, (err, fileObj) ->
+          if err then return console.log err
+          t.value.set fileObj._id
 
   'click .js-remove': (e, t) ->
     e.preventDefault()
