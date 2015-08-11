@@ -1,16 +1,9 @@
 <template name="afFileUpload">
   <div>
-    {{#if file}}
-      {{#if file.isUploaded}}
-      {{else}}
-      <span>Uploading...</span>
-      {{/if}}
-    {{else}}
-      <button class='upload-input-btn {{atts.labelClass}}'>
-        {{label}}
-        <input id='{{atts.inputId}}' type="file" {{attrIfMultiple}} class="js-file" accept="{{atts.accept}}">
-      </button>
-    {{/if}}
+    <button class='upload-input-btn {{atts.labelClass}}'>
+      {{label}}
+      <input id='{{atts.inputId}}' type="file" {{attrIfMultiple}} class="js-file" accept="{{atts.accept}}">
+    </button>
     <input type="hidden" class="js-value" value="{{value}}" data-schema-key="{{schemaKey}}">
   </div>
 </template>
