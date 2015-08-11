@@ -6,8 +6,10 @@
       <span>Uploading...</span>
       {{/if}}
     {{else}}
-      <button type="button" class="btn btn-default js-select-file">{{label}}</button>
-      <input type="file" {{attrIfMultiple}} class="hidden js-file" accept="{{atts.accept}}">
+      <button class='upload-input-btn {{atts.labelClass}}'>
+        {{label}}
+        <input id='{{atts.inputId}}' type="file" {{attrIfMultiple}} class="js-file" accept="{{atts.accept}}">
+      </button>
     {{/if}}
     <input type="hidden" class="js-value" value="{{value}}" data-schema-key="{{schemaKey}}">
   </div>
