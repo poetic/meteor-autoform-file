@@ -1,26 +1,35 @@
-.img-fileUpload-thumbnail
-{
-	max-width:100px;
-	width:200px;
+.img-fileUpload-thumbnail {
+  max-width: 100px;
+  width: 200px;
 }
 
-.file-upload-clear
-{
-	cursor: pointer;
+.file-upload-clear {
+  cursor: pointer;
 }
 
-.form-group.file-upload
-{
-	.form-group
-	{
-		label, input
-		{
-			display: none;
-		}
-	}
-	.btn {
-		max-width: 100%;
-		text-overflow: ellipsis;
-		overflow:hidden;
-	}
+.form-group.file-upload {
+  .form-group {
+    label, input {
+      display: none;
+    }
+  }
+  .btn {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+.upload-input-btn {
+  position: relative;
+  overflow: hidden;
+
+  .js-file {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.001;
+  }
 }
