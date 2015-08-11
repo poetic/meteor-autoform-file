@@ -2,7 +2,6 @@
   <div>
     {{#if file}}
       {{#if file.isUploaded}}
-      {{> Template.dynamic template=previewTemplate data=file}}
       <div>
         <a href="#" class="js-remove"><i class="fa fa-times"></i> {{removeLabel}}</a>
       </div>
@@ -15,14 +14,4 @@
     {{/if}}
     <input type="hidden" class="js-value" value="{{value}}" data-schema-key="{{schemaKey}}">
   </div>
-</template>
-
-<template name="afFileUploadThumbIcon">
-	<a class="btn btn-default" target="_blank" href="{{url}}">
-		<i class="fa fa-{{icon}}"></i> {{original.name}}
-	</a>
-</template>
-
-<template name="afFileUploadThumbImg">
-	<img src="{{url}}" alt="" class="img-fileUpload-thumbnail img-thumbnail img-rounded">
 </template>

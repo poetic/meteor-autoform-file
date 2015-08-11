@@ -35,12 +35,6 @@ Template.afFileUpload.helpers
     doc?.isUploaded() and doc._id
   schemaKey: ->
     @atts['data-schema-key']
-  previewTemplate: ->
-    doc = getDocument @
-    if doc?.isImage()
-      'afFileUploadThumbImg'
-    else
-      'afFileUploadThumbIcon'
   file: ->
     getDocument @
   attrIfMultiple: ->
@@ -68,15 +62,3 @@ Template.afFileUpload.events
   'click .js-remove': (e, t) ->
     e.preventDefault()
     t.value.set null
-
-Template.afFileUploadThumbIcon.helpers
-  icon: ->
-    switch @extension()
-      when 'pdf'
-        'file-pdf-o'
-      when 'doc', 'docx'
-        'file-word-o'
-      when 'ppt', 'avi', 'mov', 'mp4'
-        'file-powerpoint-o'
-      else
-        'file-o'
