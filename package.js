@@ -2,7 +2,7 @@ Package.describe({
   name: "poetic:autoform-file",
   summary: "Cross platform file uploads for AutoForm (supports multiple file uploads)",
   description: "Cross platform file uploads for AutoForm (supports multiple file uploads)",
-  version: "0.2.9",
+  version: "0.2.10",
   git: "http://github.com/poetic/meteor-autoform-file.git"
 });
 
