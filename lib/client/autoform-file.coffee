@@ -26,8 +26,8 @@ Template.afFileUpload.onRendered ->
     self.value.set null
 
 Template.afFileUpload.helpers
-  label: ->
-    @atts.label or 'Choose file'
+  #label: ->
+    #@atts.label or 'Choose file'
   value: ->
     doc = getDocument @
     doc?.isUploaded() and doc._id
@@ -44,18 +44,6 @@ Template.afFileUpload.helpers
 Template.afFileUpload.events
   'click .js-select-file': (e, t) ->
     t.$('.js-file').click()
-
-  'change .js-file': (e, t) ->
-    collection = getCollection t.data
-    userId = Meteor.userId()
-
-    FS.Utility.eachFile e, (file) ->
-      if userId
-        file.owner = userId
-
-        collection.insert file, (err, fileObj) ->
-          if err then return console.log err
-          t.value.set fileObj._id
 
   'click .js-remove': (e, t) ->
     e.preventDefault()

@@ -1,7 +1,7 @@
 <template name="afFileUpload">
   <div>
     <button class='upload-input-btn {{atts.labelClass}}'>
-      {{label}}
+      {{> Template.dynamic template=atts.labelTemplate}}
       <input id='{{atts.inputId}}' type="file" {{attrIfMultiple}} class="js-file" accept="{{atts.accept}}">
     </button>
     <input type="hidden" class="js-value" value="{{value}}" data-schema-key="{{schemaKey}}">
